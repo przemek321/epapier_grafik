@@ -1,0 +1,20 @@
+# Konfiguracja bazy danych
+dbconfig.js
+
+# Logi
+*.log
+
+# Pliki tymczasowe
+temp_screenshot.png
+screenshot.bmp
+
+# Node modules
+node_modules/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Pliki IDE
+.vscode/
+.idea/ 
