@@ -1,0 +1,28 @@
+sudo nano /etc/systemd/system/grafik_monitor.service
+
+[Unit]
+Description=Monitor zmian grafiku i odświeżanie e-papieru
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/grafik_monitor.py
+WorkingDirectory=/home/pi
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=10
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
+chmod +x /home/pi/grafik_monitor.py
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+
+sudo systemctl status grafik_monitor.service
+
+sudo systemctl enable grafik_monitor.service
