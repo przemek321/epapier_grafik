@@ -1,6 +1,6 @@
 # Konfiguracja bazy danych
 dbconfig.js
-
+index.js
 # Logi
 *.log
 
